@@ -13,7 +13,7 @@ const root = createRoot(container)
 root.render(
   /* <React.StrictMode> */
   <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <App />
+    <App />
   </BrowserRouter>
   /* </React.StrictMode> */
 )

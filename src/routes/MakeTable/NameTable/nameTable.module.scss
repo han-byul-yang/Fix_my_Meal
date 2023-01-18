@@ -1,0 +1,28 @@
+@use '../../../styles/mixins/guide';
+@use '../../../styles/constants/colors';
+
+.nameTablePage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.guide {
+  @include guide.guide;
+}
+
+.tableName {
+  display: flex;
+  align-items: center;
+
+  .tableNameInput {
+    min-width: 230px;
+    max-width: 300px;
+    height: 40px;
+    padding: 0 10px;
+    margin-right: 10px;
+    background: colors.$WHITE;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 10%);
+  }
+}

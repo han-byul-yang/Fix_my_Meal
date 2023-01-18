@@ -1,6 +1,19 @@
-@use '../styles/constants/levels';
+@use '../styles/constants/colors';
 
-.page {
+.background {
+  display: flex;
+  justify-content: center;
   width: 100vw;
   height: 100vh;
+  background: colors.$FONT;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  padding: 40px 0;
+  background-image: url('../assets/imgs/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }

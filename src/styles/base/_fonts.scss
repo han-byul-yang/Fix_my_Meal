@@ -3,11 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300&display=swap');
 
+@font-face {
+  font-family: ChosunCentennial;
+  font-style: normal;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/ChosunCentennial.woff2') format('woff2');
+}
+
 body,
 button,
 input,
 textarea {
-  font-family: Hahmlet, serif;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: ChosunCentennial;
   font-feature-settings: 'tnum';
   color: colors.$FONT;
 }
@@ -21,3 +29,5 @@ input[type='number'] {
     -webkit-appearance: none;
   }
 }
+
+// font-family: Hahmlet, serif;

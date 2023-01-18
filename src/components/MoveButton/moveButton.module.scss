@@ -1,0 +1,18 @@
+@use '../../styles/constants/colors';
+@use '../../styles/constants/sizes';
+
+.moveButton {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 200px;
+  height: 50px;
+  font-size: sizes.$MAIN;
+  line-height: 50px;
+  color: colors.$WHITE;
+  text-align: center;
+  cursor: pointer;
+  background: colors.$KEY;
+  border-radius: 8px;
+  transform: translateX(-50%);
+}

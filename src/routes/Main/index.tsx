@@ -1,5 +1,6 @@
 import MoveButton from 'components/MoveButton'
 
+import tableImg from 'assets/imgs/table.png'
 import styles from './main.module.scss'
 
 const Main = () => {
@@ -12,9 +13,8 @@ const Main = () => {
         </p>
       </header>
       <main className={styles.main}>
-        <div className={styles.moveButton}>
-          <MoveButton navigatePath='login'>나의 새해 상 만들기</MoveButton>
-        </div>
+        <img className={styles.tableImg} src={tableImg} alt='tableImg' />
+        <MoveButton navigatePath='login'>나의 새해 상 만들기</MoveButton>
       </main>
     </>
   )

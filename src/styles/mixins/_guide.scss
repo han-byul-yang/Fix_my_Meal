@@ -1,0 +1,6 @@
+@use '../constants/sizes';
+
+@mixin guide {
+  margin: 30px 0;
+  font-size: sizes.$DESCRIPTION;
+}

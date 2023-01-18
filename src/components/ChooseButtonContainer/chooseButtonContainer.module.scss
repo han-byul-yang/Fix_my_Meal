@@ -1,0 +1,11 @@
+.chooseButtonContainer {
+  display: flex;
+  align-content: center;
+  margin: 0 40px;
+
+  .chooseButtonBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}

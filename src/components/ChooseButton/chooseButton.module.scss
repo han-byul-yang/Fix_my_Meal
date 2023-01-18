@@ -1,0 +1,14 @@
+@use '../../styles/constants/colors';
+
+.chooseButton {
+  width: 100px;
+  height: 100px;
+  margin: 0 5px 10px;
+  background: colors.$WHITE;
+  border-radius: 8px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 10%);
+}
+
+.activeBorder {
+  border: 2px solid colors.$KEY;
+}

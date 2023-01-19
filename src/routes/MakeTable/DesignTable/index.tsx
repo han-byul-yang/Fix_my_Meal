@@ -2,9 +2,9 @@ import { tableDesign } from 'constants/chooseConstants'
 import MoveButton from 'components/MoveButton'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
-import styles from './chooseDesign.module.scss'
+import styles from './designTable.module.scss'
 
-const ChooseDesign = () => {
+const DesignTable = () => {
   return (
     <>
       <p className={styles.guide}>하나. 받을 상의 디자인을 고르시오.</p>
@@ -14,4 +14,4 @@ const ChooseDesign = () => {
   )
 }
 
-export default ChooseDesign
+export default DesignTable

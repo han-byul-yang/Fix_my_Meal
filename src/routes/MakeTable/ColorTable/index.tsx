@@ -3,9 +3,9 @@ import MoveButton from 'components/MoveButton'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import tableImg from 'assets/imgs/table.png'
-import styles from './chooseColor.module.scss'
+import styles from './colorTable.module.scss'
 
-const ChooseColor = () => {
+const ColorTable = () => {
   return (
     <>
       <p className={styles.guide}>둘. 상의 색상을 고르시오.</p>
@@ -16,4 +16,4 @@ const ChooseColor = () => {
   )
 }
 
-export default ChooseColor
+export default ColorTable

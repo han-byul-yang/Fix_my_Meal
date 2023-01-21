@@ -1,0 +1,39 @@
+@use '../../../styles/constants/colors';
+
+.nickNameContainer {
+  display: flex;
+  align-items: center;
+
+  input {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-bottom: 1px solid colors.$FONT;
+  }
+}
+
+.messageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+}
+
+.messageText {
+  position: absolute;
+  z-index: 20;
+  width: 80%;
+  height: 85%;
+  margin: 20px;
+  resize: none;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.messagePaperImg {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}

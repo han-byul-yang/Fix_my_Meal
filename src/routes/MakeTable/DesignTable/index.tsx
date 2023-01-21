@@ -1,17 +1,13 @@
+import { GUIDE } from 'constants/guideContants'
+import { PATH } from 'constants/pathContants'
 import { tableDesign } from 'constants/chooseConstants'
-import MoveButton from 'components/MoveButton'
+import withGuideContainer from 'Hocs/withGuideContainer'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import styles from './designTable.module.scss'
 
 const DesignTable = () => {
-  return (
-    <>
-      <p className={styles.guide}>하나. 받을 상의 디자인을 고르시오.</p>
-      <ChooseButtonContainer items={tableDesign} />
-      <MoveButton navigatePath='makeTable/second'>다음으로</MoveButton>
-    </>
-  )
+  return <ChooseButtonContainer items={tableDesign} />
 }
 
-export default DesignTable
+export default withGuideContainer(DesignTable, GUIDE.MAKETABLE.DESIGNTABLE, PATH.TOMAKETABLE.SECOND)

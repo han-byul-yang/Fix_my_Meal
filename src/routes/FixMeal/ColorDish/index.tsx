@@ -5,9 +5,9 @@ import withGuideContainer from 'Hocs/withGuideContainer'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import tableImg from 'assets/imgs/table.png'
-import styles from './colorTable.module.scss'
+import styles from './colorDish.module.scss'
 
-const ColorTable = () => {
+const ColorDish = () => {
   return (
     <>
       <img className={styles.tableImg} src={tableImg} alt='tableImg' />
@@ -16,4 +16,4 @@ const ColorTable = () => {
   )
 }
 
-export default withGuideContainer(ColorTable, GUIDE.MAKETABLE.COLORTABLE, PATH.TOMAKETABLE.THIRD)
+export default withGuideContainer(ColorDish, GUIDE.FIXMEAL.COLORDISH, PATH.TOFIXMEAL.FOURTH)

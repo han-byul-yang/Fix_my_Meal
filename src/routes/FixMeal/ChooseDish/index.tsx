@@ -1,19 +1,19 @@
-import { color } from 'constants/chooseConstants'
+import { dishDesign } from 'constants/chooseConstants'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
 import withGuideContainer from 'Hocs/withGuideContainer'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import tableImg from 'assets/imgs/table.png'
-import styles from './colorTable.module.scss'
+import styles from './chooseDish.module.scss'
 
-const ColorTable = () => {
+const ChooseDish = () => {
   return (
     <>
       <img className={styles.tableImg} src={tableImg} alt='tableImg' />
-      <ChooseButtonContainer items={color} />
+      <ChooseButtonContainer items={dishDesign} />
     </>
   )
 }
 
-export default withGuideContainer(ColorTable, GUIDE.MAKETABLE.COLORTABLE, PATH.TOMAKETABLE.THIRD)
+export default withGuideContainer(ChooseDish, GUIDE.FIXMEAL.CHOOSEDISH, PATH.TOFIXMEAL.THIRD)

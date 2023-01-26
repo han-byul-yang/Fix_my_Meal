@@ -6,9 +6,10 @@ import styles from './chooseButtonContainer.module.scss'
 
 interface chooseButtonContainerProps {
   items: string[] | any[]
+  handleSelectClick: (selected: number) => void
 }
 
-const ChooseButtonContainer = ({ items }: chooseButtonContainerProps) => {
+const ChooseButtonContainer = ({ items, handleSelectClick }: chooseButtonContainerProps) => {
   const [selectedDesign, setSelectedDesign] = useState('')
 
   return (
@@ -18,7 +19,12 @@ const ChooseButtonContainer = ({ items }: chooseButtonContainerProps) => {
           const designKey = `design-${index}`
 
           return (
-            <ChooseButton key={designKey} setSelectedDesign={setSelectedDesign} selectedDesign={selectedDesign}>
+            <ChooseButton
+              key={designKey}
+              setSelectedDesign={setSelectedDesign}
+              selectedDesign={selectedDesign}
+              handleSelectClick={() => handleSelectClick(index)}
+            >
               {design}
             </ChooseButton>
           )

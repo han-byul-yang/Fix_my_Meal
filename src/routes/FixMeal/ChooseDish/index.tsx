@@ -1,6 +1,9 @@
+import { useDispatch } from 'react-redux'
+
+import { setMealDesign } from 'reducer/mealReducer'
+import withGuideContainer from 'Hocs/withGuideContainer'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
-import withGuideContainer from 'Hocs/withGuideContainer'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import { Pocket1Icon, Pocket2Icon, Pocket3Icon, Pocket4Icon, Pocket5Icon, Pocket6Icon } from 'assets/svgs'
@@ -15,7 +18,13 @@ const dishDesign = [
   <Pocket6Icon key={6} className={styles.pocketIcon} />,
 ]
 const ChooseDish = () => {
-  return <ChooseButtonContainer items={dishDesign} />
+  const dispatch = useDispatch()
+
+  const handlePocketDesignClick = (selected: number) => {
+    dispatch(setMealDesign(selected))
+  }
+
+  return <ChooseButtonContainer items={dishDesign} handleSelectClick={handlePocketDesignClick} />
 }
 
 export default withGuideContainer(ChooseDish, GUIDE.FIXMEAL.CHOOSEDISH, PATH.TOFIXMEAL.FOURTH)

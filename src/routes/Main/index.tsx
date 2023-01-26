@@ -14,7 +14,7 @@ const Main = () => {
       </header>
       <main className={styles.main}>
         <img className={styles.tableImg} src={tableImg} alt='tableImg' />
-        <MoveButton navigatePath='login'>나의 새해 상 만들기</MoveButton>
+        <MoveButton navigatePath='signUp'>나의 새해 상 만들기</MoveButton>
       </main>
     </>
   )

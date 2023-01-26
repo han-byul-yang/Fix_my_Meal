@@ -1,16 +1,26 @@
 import { ChangeEvent, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
+import { setTableName } from 'reducer/tableReducer'
+import withGuideContainer from 'Hocs/withGuideContainer'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
-import withGuideContainer from 'Hocs/withGuideContainer'
 
 import styles from './nameTable.module.scss'
 
 const NameTable = () => {
-  const [tableName, setTableName] = useState('')
+  const [tableName, setNameTable] = useState('')
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleInputTableName = (e: ChangeEvent<HTMLInputElement>) => {
-    setTableName(e.currentTarget.value)
+    setNameTable(e.currentTarget.value)
+    dispatch(setTableName(e.currentTarget.value))
+  }
+
+  const handleSubmitButtonClick = () => {
+    navigate(`/${PATH.MYTABLE}`)
   }
 
   return (

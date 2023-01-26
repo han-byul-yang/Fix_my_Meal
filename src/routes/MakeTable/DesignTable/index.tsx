@@ -1,6 +1,9 @@
+import { useDispatch } from 'react-redux'
+
+import { setTableDesign } from 'reducer/tableReducer'
+import withGuideContainer from 'Hocs/withGuideContainer'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
-import withGuideContainer from 'Hocs/withGuideContainer'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import {
@@ -27,7 +30,13 @@ const tableDesign = [
 ]
 
 const DesignTable = () => {
-  return <ChooseButtonContainer items={tableDesign} />
+  const dispatch = useDispatch()
+
+  const handleTableDesignClick = (selected: number) => {
+    dispatch(setTableDesign(selected + 1))
+  }
+
+  return <ChooseButtonContainer items={tableDesign} handleSelectClick={handleTableDesignClick} />
 }
 
 export default withGuideContainer(DesignTable, GUIDE.MAKETABLE.DESIGNTABLE, PATH.TOMAKETABLE.SECOND)

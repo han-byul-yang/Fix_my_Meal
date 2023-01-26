@@ -1,1 +1,6 @@
-@use '../../../styles/mixins/guide';
+@use '../../../styles/constants/colors';
+
+.tableDesign {
+  width: 60px;
+  height: 60px;
+}

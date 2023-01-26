@@ -39,4 +39,4 @@ const WriteMessage = () => {
   )
 }
 
-export default withGuideContainer(WriteMessage, GUIDE.FIXMEAL.WRITEMESSAGE, PATH.TOFIXMEAL.SEND)
+export default withGuideContainer(WriteMessage, GUIDE.FIXMEAL.WRITEMESSAGE, PATH.TOFIXMEAL.THIRD)

@@ -5,7 +5,7 @@ import ChooseButton from 'components/ChooseButton'
 import styles from './chooseButtonContainer.module.scss'
 
 interface chooseButtonContainerProps {
-  items: string[]
+  items: string[] | any[]
 }
 
 const ChooseButtonContainer = ({ items }: chooseButtonContainerProps) => {

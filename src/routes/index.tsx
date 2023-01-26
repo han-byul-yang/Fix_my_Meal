@@ -21,15 +21,16 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route element={<Layout />}>
-            <Route path='login' element={<Auth />} />
+            <Route path='signUp' element={<Auth type='signUp' />} />
+            <Route path='signIn' element={<Auth type='signIn' />} />
             <Route path='makeTable/first' element={<DesignTable />} />
             <Route path='makeTable/second' element={<ColorTable />} />
             <Route path='makeTable/third' element={<NameTable />} />
             <Route path='myTable' element={<MyTablePage />} />
             <Route path='fixMeal/first' element={<ChooseMeal />} />
-            <Route path='fixMeal/second' element={<ChooseDish />} />
-            <Route path='fixMeal/third' element={<ColorDish />} />
-            <Route path='fixMeal/fourth' element={<WriteMessage />} />
+            <Route path='fixMeal/second' element={<WriteMessage />} />
+            <Route path='fixMeal/third' element={<ChooseDish />} />
+            <Route path='fixMeal/fourth' element={<ColorDish />} />
           </Route>
         </Routes>
       </div>

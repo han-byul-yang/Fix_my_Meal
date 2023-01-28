@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { setMealDesign } from 'reducer/mealReducer'
 import withGuideContainer from 'Hocs/withGuideContainer'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
+import GuideContainer from 'components/GuideContainer'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import { Pocket1Icon, Pocket2Icon, Pocket3Icon, Pocket4Icon, Pocket5Icon, Pocket6Icon } from 'assets/svgs'
@@ -19,12 +21,21 @@ const dishDesign = [
 ]
 const ChooseDish = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handlePocketDesignClick = (selected: number) => {
     dispatch(setMealDesign(selected))
   }
 
-  return <ChooseButtonContainer items={dishDesign} handleSelectClick={handlePocketDesignClick} />
+  const handleMoveButtonClick = () => {
+    navigate(`/${PATH.TOFIXMEAL.FOURTH}`)
+  }
+
+  return (
+    <GuideContainer guideDescription={GUIDE.FIXMEAL.CHOOSEDISH} handleClick={handleMoveButtonClick}>
+      <ChooseButtonContainer items={dishDesign} handleSelectClick={handlePocketDesignClick} />
+    </GuideContainer>
+  )
 }
 
-export default withGuideContainer(ChooseDish, GUIDE.FIXMEAL.CHOOSEDISH, PATH.TOFIXMEAL.FOURTH)
+export default ChooseDish

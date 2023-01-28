@@ -1,4 +1,8 @@
 export const PATH = {
+  AUTH: {
+    SIGNIN: 'signIn',
+    SIGNUP: 'signUp',
+  },
   TOMAKETABLE: {
     FIRST: 'makeTable/first',
     SECOND: 'makeTable/second',

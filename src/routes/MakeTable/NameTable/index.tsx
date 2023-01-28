@@ -6,6 +6,7 @@ import { setTableName } from 'reducer/tableReducer'
 import withGuideContainer from 'Hocs/withGuideContainer'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
+import GuideContainer from 'components/GuideContainer'
 
 import styles from './nameTable.module.scss'
 
@@ -24,13 +25,15 @@ const NameTable = () => {
   }
 
   return (
-    <div className={styles.nameTablePage}>
-      <div className={styles.tableName}>
-        <input className={styles.tableNameInput} type='text' value={tableName} onChange={handleInputTableName} />
-        <p>상</p>
+    <GuideContainer guideDescription={GUIDE.MAKETABLE.DESIGNTABLE} handleClick={handleSubmitButtonClick}>
+      <div className={styles.nameTablePage}>
+        <div className={styles.tableName}>
+          <input className={styles.tableNameInput} type='text' value={tableName} onChange={handleInputTableName} />
+          <p>상</p>
+        </div>
       </div>
-    </div>
+    </GuideContainer>
   )
 }
 
-export default withGuideContainer(NameTable, GUIDE.MAKETABLE.NAMETABLE, PATH.MYTABLE)
+export default NameTable

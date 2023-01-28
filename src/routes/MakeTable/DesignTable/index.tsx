@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { setTableDesign } from 'reducer/tableReducer'
 import withGuideContainer from 'Hocs/withGuideContainer'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
+import GuideContainer from 'components/GuideContainer'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import {
@@ -31,12 +33,21 @@ const tableDesign = [
 
 const DesignTable = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleTableDesignClick = (selected: number) => {
     dispatch(setTableDesign(selected + 1))
   }
 
-  return <ChooseButtonContainer items={tableDesign} handleSelectClick={handleTableDesignClick} />
+  const handleMoveButtonClick = () => {
+    navigate(`/${PATH.TOMAKETABLE.SECOND}`)
+  }
+
+  return (
+    <GuideContainer guideDescription={GUIDE.MAKETABLE.DESIGNTABLE} handleClick={handleMoveButtonClick}>
+      <ChooseButtonContainer items={tableDesign} handleSelectClick={handleTableDesignClick} />
+    </GuideContainer>
+  )
 }
 
-export default withGuideContainer(DesignTable, GUIDE.MAKETABLE.DESIGNTABLE, PATH.TOMAKETABLE.SECOND)
+export default DesignTable

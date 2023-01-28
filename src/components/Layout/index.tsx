@@ -5,7 +5,7 @@ import styles from './layout.module.scss'
 
 const Layout = () => {
   return (
-    <main className={styles.main}>
+    <main className={styles.mainLayout}>
       <Suspense fallback={<div>loading...</div>}>
         <Outlet />
       </Suspense>

@@ -1,22 +1,14 @@
-import { useNavigate } from 'react-router-dom'
-
 import styles from './moveButton.module.scss'
 
 interface moveButtonProps {
   children: string
-  navigatePath: string
+  handleButtonClick: () => void
 }
 
-const MoveButton = ({ children, navigatePath }: moveButtonProps) => {
-  const navigate = useNavigate()
-
-  const handleMoveButtonClick = () => {
-    navigate(`/${navigatePath}`)
-  }
-
+const MoveButton = ({ children, handleButtonClick }: moveButtonProps) => {
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div className={styles.moveButton} onClick={handleMoveButtonClick}>
+    <div className={styles.moveButton} onClick={handleButtonClick}>
       {children}
     </div>
   )

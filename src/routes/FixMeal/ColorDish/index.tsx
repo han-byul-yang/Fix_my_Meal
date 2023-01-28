@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { setMealColor } from 'reducer/mealReducer'
@@ -5,6 +6,7 @@ import withGuideContainer from 'Hocs/withGuideContainer'
 import { colors } from 'constants/chooseConstants'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
+import GuideContainer from 'components/GuideContainer'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import { TteokIcon } from 'assets/svgs'
@@ -12,6 +14,7 @@ import styles from './colorDish.module.scss'
 
 const ColorDish = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handlePocketColorClick = (selected: number) => {
     dispatch(setMealColor(selected + 1))
@@ -22,7 +25,15 @@ const ColorDish = () => {
     return <TteokIcon key={colorKey} className={styles.tteokIcon} style={{ fill: `${color}` }} />
   })
 
-  return <ChooseButtonContainer items={tteokColor} handleSelectClick={handlePocketColorClick} />
+  const handleMoveButtonClick = () => {
+    navigate(`/${PATH.TOFIXMEAL.SEND}`)
+  }
+
+  return (
+    <GuideContainer guideDescription={GUIDE.FIXMEAL.COLORDISH} handleClick={handleMoveButtonClick}>
+      <ChooseButtonContainer items={tteokColor} handleSelectClick={handlePocketColorClick} />
+    </GuideContainer>
+  )
 }
 
-export default withGuideContainer(ColorDish, GUIDE.FIXMEAL.COLORDISH, PATH.TOFIXMEAL.SEND)
+export default ColorDish

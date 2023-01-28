@@ -1,8 +1,10 @@
 import { ChangeEvent, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
 import withGuideContainer from 'Hocs/withGuideContainer'
+import GuideContainer from 'components/GuideContainer'
 
 import messagePaperImg from 'assets/imgs/messagePaper.png'
 import styles from './writeMessage.module.scss'
@@ -10,6 +12,7 @@ import styles from './writeMessage.module.scss'
 const WriteMessage = () => {
   const [nickName, setNickName] = useState('')
   const [message, setMessage] = useState('')
+  const navigate = useNavigate()
 
   const handleWriteNickNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNickName(e.currentTarget.value)
@@ -19,8 +22,12 @@ const WriteMessage = () => {
     setMessage(e.currentTarget.value)
   }
 
+  const handleMoveButtonClick = () => {
+    navigate(`/${PATH.TOFIXMEAL.THIRD}`)
+  }
+
   return (
-    <>
+    <GuideContainer guideDescription={GUIDE.FIXMEAL.WRITEMESSAGE} handleClick={handleMoveButtonClick}>
       <div className={styles.nickNameContainer}>
         <p>닉네임:</p>
         <input type='text' value={nickName} onChange={handleWriteNickNameChange} />
@@ -35,8 +42,8 @@ const WriteMessage = () => {
         />
         <img className={styles.messagePaperImg} src={messagePaperImg} alt='messagePaperImg' />
       </div>
-    </>
+    </GuideContainer>
   )
 }
 
-export default withGuideContainer(WriteMessage, GUIDE.FIXMEAL.WRITEMESSAGE, PATH.TOFIXMEAL.THIRD)
+export default WriteMessage

@@ -1,0 +1,17 @@
+@use '../../styles/constants/sizes';
+
+.tableTitle {
+  margin-bottom: 10px;
+  font-size: sizes.$TITLE;
+}
+
+.totalNumberTitle {
+  font-size: sizes.$SUB;
+  text-align: center;
+}
+
+.tableImg {
+  width: 250px;
+  height: 250px;
+  margin: 60px 0;
+}

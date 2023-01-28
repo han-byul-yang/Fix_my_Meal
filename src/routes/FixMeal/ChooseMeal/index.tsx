@@ -1,9 +1,11 @@
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { setMealFood } from 'reducer/mealReducer'
 import withGuideContainer from 'Hocs/withGuideContainer'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
+import GuideContainer from 'components/GuideContainer'
 import ChooseButtonContainer from 'components/ChooseButtonContainer'
 
 import { food1, food2, food3, food4, food5, food6, food7, food8, food9 } from 'assets/imgs/food'
@@ -13,6 +15,7 @@ const meals = [food1, food2, food3, food4, food5, food6, food7, food8, food9]
 
 const ChooseMeal = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleMealClick = (selected: number) => {
     dispatch(setMealFood(selected + 1))
@@ -24,7 +27,15 @@ const ChooseMeal = () => {
     return <img key={mealKey} className={styles.mealImg} alt={`${mealKey}`} src={meal} />
   })
 
-  return <ChooseButtonContainer items={mealImgs} handleSelectClick={handleMealClick} />
+  const handleMoveButtonClick = () => {
+    navigate(`/${PATH.TOFIXMEAL.SECOND}`)
+  }
+
+  return (
+    <GuideContainer guideDescription={GUIDE.FIXMEAL.CHOOSEMEAL} handleClick={handleMoveButtonClick}>
+      <ChooseButtonContainer items={mealImgs} handleSelectClick={handleMealClick} />
+    </GuideContainer>
+  )
 }
 
-export default withGuideContainer(ChooseMeal, GUIDE.FIXMEAL.CHOOSEMEAL, PATH.TOFIXMEAL.SECOND)
+export default ChooseMeal

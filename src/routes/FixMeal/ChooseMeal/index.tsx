@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { setMealFood } from 'reducer/mealReducer'
-import withGuideContainer from 'Hocs/withGuideContainer'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
 import GuideContainer from 'components/GuideContainer'
@@ -18,7 +17,7 @@ const ChooseMeal = () => {
   const navigate = useNavigate()
 
   const handleMealClick = (selected: number) => {
-    dispatch(setMealFood(selected + 1))
+    dispatch(setMealFood(selected))
   }
 
   const mealImgs = meals.map((meal, index) => {

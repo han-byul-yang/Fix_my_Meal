@@ -1,4 +1,5 @@
 export interface firebaseDBUserType {
+  email: string
   nickName: string
   writeNum: number
 }

@@ -1,9 +1,18 @@
+import { useNavigate } from 'react-router-dom'
+
 import MoveButton from 'components/MoveButton'
 
 import tableImg from 'assets/imgs/table.png'
 import styles from './main.module.scss'
+import { PATH } from 'constants/pathContants'
 
 const Main = () => {
+  const navigate = useNavigate()
+
+  const handleMoveButtonClick = () => {
+    navigate(`/${PATH.AUTH.SIGNUP}`)
+  }
+
   return (
     <>
       <header>
@@ -14,7 +23,7 @@ const Main = () => {
       </header>
       <main className={styles.main}>
         <img className={styles.tableImg} src={tableImg} alt='tableImg' />
-        <MoveButton navigatePath='signUp'>나의 새해 상 만들기</MoveButton>
+        <MoveButton handleButtonClick={handleMoveButtonClick}>나의 새해 상 만들기</MoveButton>
       </main>
     </>
   )

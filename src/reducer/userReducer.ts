@@ -1,10 +1,13 @@
+const EMAIL = 'user/EMAIL'
 const NICKNAME = 'user/NICKNAME'
 const WRITENUM = 'user/WRITENUM'
 
+export const setUserEmail = (email: string) => ({ type: EMAIL, email })
 export const setUserNickname = (nickname: string) => ({ type: NICKNAME, nickname })
 export const setUserWriteNum = (writeNum: string) => ({ type: WRITENUM, writeNum })
 
 const initialUserState = {
+  email: '',
   nickname: '',
   writeNum: '',
 }
@@ -15,6 +18,11 @@ export default function userReducer(
   action: { type: string; [select: string]: string }
 ) {
   switch (action.type) {
+    case EMAIL:
+      return {
+        ...state,
+        email: action.email,
+      }
     case NICKNAME:
       return {
         ...state,

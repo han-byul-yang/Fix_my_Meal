@@ -21,8 +21,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route element={<Layout />}>
-            <Route path='signUp' element={<Auth type='signUp' />} />
-            <Route path='signIn' element={<Auth type='signIn' />} />
+            <Route path='signUp' element={<Auth />} />
+            <Route path='signIn' element={<Auth />} />
             <Route path='makeTable/first' element={<DesignTable />} />
             <Route path='makeTable/second' element={<ColorTable />} />
             <Route path='makeTable/third' element={<NameTable />} />

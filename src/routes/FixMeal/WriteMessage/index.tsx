@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
-import withGuideContainer from 'Hocs/withGuideContainer'
 import GuideContainer from 'components/GuideContainer'
 
 import messagePaperImg from 'assets/imgs/messagePaper.png'

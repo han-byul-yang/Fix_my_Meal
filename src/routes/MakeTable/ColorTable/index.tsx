@@ -2,8 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { setTableColor } from 'reducer/tableReducer'
-import { useMoveButtonNavigateClick } from 'hooks/useMoveButtonHandle'
-import withGuideContainer from 'Hocs/withGuideContainer'
 import { selectorStateType } from 'types'
 import { colors } from 'constants/chooseConstants'
 import { GUIDE } from 'constants/guideContants'
@@ -20,7 +18,7 @@ const ColorTable = () => {
   const navigate = useNavigate()
 
   const handleTableColorClick = (selected: number) => {
-    dispatch(setTableColor(selected + 1))
+    dispatch(setTableColor(selected))
   }
 
   const tteokColor = colors.map((color, index) => {
@@ -33,7 +31,7 @@ const ColorTable = () => {
   }
   return (
     <GuideContainer guideDescription={GUIDE.MAKETABLE.COLORTABLE} handleClick={handleMoveButtonClick}>
-      <TableIcon className={styles.tableIcon} style={{ stroke: `${colors[tableColorState - 1]}` }} />
+      <TableIcon className={styles.tableIcon} style={{ stroke: `${colors[tableColorState]}` }} />
       <ChooseButtonContainer items={tteokColor} handleSelectClick={handleTableColorClick} />
     </GuideContainer>
   )

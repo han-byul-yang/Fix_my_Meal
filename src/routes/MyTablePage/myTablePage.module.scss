@@ -10,8 +10,21 @@
   text-align: center;
 }
 
-.tableImg {
-  width: 250px;
-  height: 250px;
-  margin: 60px 0;
+.table {
+  position: relative;
+
+  .tableIcon {
+    width: 300px;
+    height: 300px;
+    margin: 60px 0;
+  }
+
+  .tableDesign {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 210px;
+    height: 210px;
+    transform: translate(-50%, -50%);
+  }
 }

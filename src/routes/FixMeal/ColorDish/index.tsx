@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { setMealColor } from 'reducer/mealReducer'
-import withGuideContainer from 'Hocs/withGuideContainer'
 import { colors } from 'constants/chooseConstants'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
@@ -17,7 +16,7 @@ const ColorDish = () => {
   const navigate = useNavigate()
 
   const handlePocketColorClick = (selected: number) => {
-    dispatch(setMealColor(selected + 1))
+    dispatch(setMealColor(selected))
   }
 
   const tteokColor = colors.map((color, index) => {

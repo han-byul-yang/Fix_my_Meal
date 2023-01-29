@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { setMealDesign } from 'reducer/mealReducer'
-import withGuideContainer from 'Hocs/withGuideContainer'
 import { GUIDE } from 'constants/guideContants'
 import { PATH } from 'constants/pathContants'
 import GuideContainer from 'components/GuideContainer'
